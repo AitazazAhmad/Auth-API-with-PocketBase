@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, black ,  #7f1430);
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    background: white;
+    border-radius: 20px;
+    border-color: black;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    overflow: hidden;
+}
+
+.left-side {
+    width: 50%;
+    background: linear-gradient(to right, black,#7f1430 );
+    color: white;
+    text-align: center;
+    padding: 50px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.left-side h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.right-side {
+    width: 50%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.input-box {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 12px 40px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.input-box input:focus {
+    border-color: #661409;
+    box-shadow: 0 0 10px rgba(161, 10, 10, 0.931);
+}
+
+.terms {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.terms input {
+    margin-right: 10px;
+}
+
+.terms a {
+    color: #f61b0fd2;
+    text-decoration: none;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(to right, black, #7f1430);
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    box-shadow: 0 0 15px black;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.login-link a {
+    color: #e90101;
+    text-decoration: none;
+}
+
+/* Responsive Design */
+@media (max-width: 2293px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .left-side {
+        width: 100%;
+        padding: 40px;
+    }
+
+    .right-side {
+        width: 100%;
+        padding: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .input-box input {
+        padding: 12px 35px;
+    }
+
+    .input-box i {
+        left: 10px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
