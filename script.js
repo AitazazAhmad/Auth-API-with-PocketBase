@@ -37,6 +37,7 @@ document.getElementById("signup-form").addEventListener(
                 document.getElementById("Name").value = "";
                 document.getElementById("E_mail").value = "";
                 document.getElementById("Password").value = "";
+                document.getElementById("confirm password").value = "";
 
                 // Optionally, redirect to another page or perform other actions
             } else {
@@ -47,6 +48,38 @@ document.getElementById("signup-form").addEventListener(
         } catch (error) {
             console.error("Network error:", error);
             alert("Network error: " + error.message);
+        }
+    },
+);
+document.getElementById("signup-form").addEventListener(
+    "submit",
+    function (event) {
+        event.preventDefault(); // Prevent form submission
+
+        const password = document.getElementById("Password").value; // Get the password
+        const confirmPassword =
+            document.getElementById("confirm password").value; // Get the confirm password
+        const errorMessage = document.createElement("div"); // Create a new div for error messages
+        errorMessage.style.color = "red"; // Set the error message color
+        const existingError = document.querySelector(".error-message"); // Check if an error message already exists
+
+        // Remove existing error message if present
+        if (existingError) {
+            existingError.remove();
+        }
+
+        // Check if passwords match
+        if (password === confirmPassword) {
+            // Proceed with form submission or further processing
+            alert("Passwords match! Form can be submitted.");
+            // You can submit the form here if needed
+            // this.submit();
+        } else {
+            // Display error message
+            errorMessage.className = "error-message"; // Add a class for styling if needed
+            errorMessage.textContent =
+                "Passwords do not match. Please try again.";
+            document.querySelector(".right-side").appendChild(errorMessage); // Append error message to the form
         }
     },
 );
